@@ -119,9 +119,17 @@
 		position: absolute;
 		top: 62%;
 		right: calc(50% - rem(375));
-		transform: translate(50%, -50%);
+		transform: translate(60%, -50%);
 		z-index: -1;
 		@include adaptiveValue('width', 857, 630, $widthTo: $mobile);
+
+		opacity: 0;
+
+		&._show {
+			opacity: 1;
+			transition: all $anim-duration;
+			transform: translate(50%, -50%);
+		}
 
 		img {
 			width: 100%;
