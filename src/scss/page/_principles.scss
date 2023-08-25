@@ -28,7 +28,7 @@
 
 	&__item {
 		padding: 1px;
-		background: linear-gradient(150deg, #626767b3, #2f3434b3);
+		background: linear-gradient(90deg, #898d8db3, #2f3434b3);
 		border-radius: rem($rounded);
 		overflow: hidden;
 		transition: transform calc($duration * 2);
@@ -45,7 +45,9 @@
 		height: 100%;
 		background: #111616;
 		border-radius: rem($rounded);
-		@include adaptiveValue('padding', 30, 20);
+		@include adaptiveValue('padding-top', 30, 20);
+		@include adaptiveValue('padding-left', 30, 20);
+		@include adaptiveValue('padding-right', 30, 20);
 		padding-bottom: rem(50);
 		position: relative;
 

@@ -80,7 +80,7 @@
 
 	&__parameters {
 		padding: 1px;
-		background: linear-gradient(150deg, #626767b3, #2f3434b3);
+		background: linear-gradient(90deg, #a7adadb3, #2f3434b3);
 		border-radius: rem($rounded-mini);
 		overflow: hidden;
 
@@ -100,7 +100,11 @@
 		background: $bg-darker;
 		border-radius: rem($rounded-mini);
 
-		@media (min-width: rem($mobile)) {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@media (min-width: rem($tablet)) {
 			position: relative;
 
 			&::before {
@@ -113,10 +117,6 @@
 				@include adaptiveValue('width', 490, 350, $widthTo: $mobile);
 				@include adaptiveValue('height', 240, 150, $widthTo: $mobile);
 				border-radius: 50%;
-
-				@media (max-width: rem($tablet)) {
-					transform: translate(-50%, -50%) rotate(-70deg);
-				}
 			}
 		}
 	}

@@ -1,5 +1,9 @@
 .news {
 	&__title {
+		text-align: center;
+		@include adaptiveValue('font-size', 40, 32);
+		line-height: lh(47, 40);
+		font-weight: 700;
 		@include adaptiveValue('margin-bottom', 80, 46);
 	}
 
@@ -43,7 +47,7 @@
 	&__slide {
 		height: 100%;
 		padding: 1px;
-		background: linear-gradient(150deg, #626767b3, #2f3434b3);
+		background: linear-gradient(90deg, #ffffff81, #2f3434b3);
 		border-radius: rem($rounded-mini);
 		overflow: hidden;
 	}

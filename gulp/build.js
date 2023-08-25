@@ -68,14 +68,10 @@ gulp.task('sass:build', function () {
 		.src('./src/scss/*.scss')
 		.pipe(changed('./build/css/'))
 		.pipe(plumber(plumberNotify('SCSS')))
-		.pipe(sourceMaps.init())
 		.pipe(autoprefixer())
 		.pipe(sassGlob())
-		.pipe(webpCss())
-		.pipe(groupMedia())
 		.pipe(sass())
 		.pipe(csso())
-		.pipe(sourceMaps.write())
 		.pipe(gulp.dest('./build/css/'));
 });
 
@@ -83,7 +79,9 @@ gulp.task('images:build', function () {
 	return gulp
 		.src('./src/img/**/*')
 		.pipe(changed('./build/img/'))
-		.pipe(webp())
+		.pipe(webp({
+			quality: 100,
+		}))
 		.pipe(gulp.dest('./build/img/'))
 		.pipe(gulp.src('./src/img/**/*'))
 		.pipe(changed('./build/img/'))

@@ -1,6 +1,6 @@
 .btn {
 	font-size: rem(16);
-	font-weight: 600;
+	font-weight: 500;
 	@extend %flex-center;
 	padding: 0 rem(30);
 	@include adaptiveValue('height', 53, 47);

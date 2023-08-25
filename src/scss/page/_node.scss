@@ -111,9 +111,11 @@
 		}
 
 		@media (max-width: rem($mobile)) {
-			border-bottom: 1px solid;
-			border-image: linear-gradient(90deg, #00000000, #01716b, #00000000);
-			border-image-slice: 1;
+			&:not(:last-child) {
+				border-bottom: 1px solid;
+				border-image: linear-gradient(90deg, #00000000, #01716b, #00000000);
+				border-image-slice: 1;
+			}
 		}
 	}
 
