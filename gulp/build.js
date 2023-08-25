@@ -112,12 +112,3 @@ gulp.task('js:build', function () {
 		.pipe(webpack(require('./../webpack.config.js')))
 		.pipe(gulp.dest('./build/js/'));
 });
-
-const serverOptions = {
-	livereload: true,
-	open: true,
-};
-
-gulp.task('server:build', function () {
-	return gulp.src('./build/').pipe(server(serverOptions));
-});
