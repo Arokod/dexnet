@@ -15,6 +15,8 @@
 	--node-farthest: var(--node-farthest-bg) calc(50% + #{rem(510)}) 23%
 		no-repeat;
 
+	--glow: radial-gradient(circle at 30% 49%, #12e1f017, #12e1f007 30%, #00000000 60%);
+
 	@media (max-width: rem($pc)) {
 		--honeycomb-left: var(--honeycomb-left-bg) calc(50% - #{vw(166, $pc)})
 			100% / #{vw(1593, $pc)} no-repeat;
@@ -52,6 +54,7 @@
 				800,
 				$mobile-small
 			)} no-repeat;
+		--glow: radial-gradient(circle at 50% 46%, #12e1f017, #00000000 40%);
 	}
 
 	position: relative;
@@ -59,10 +62,11 @@
 	background: var(--node-far), var(--node-farthest), var(--honeycomb-left),
 		var(--honeycomb-right);
 	@media (max-width: rem($mobile)) {
-		background: var(--node-far), var(--node-farthest), var(--honeycomb-left);
+		background: var(--node-far), var(--node-farthest), var(--honeycomb-left),
+			var(--glow);
 	}
 	@media (max-width: rem($mobile-small)) {
-		background: var(--honeycomb-left);
+		background: var(--honeycomb-left), var(--glow);
 	}
 
 	&::before,
@@ -79,37 +83,25 @@
 		filter: contrast(1.2);
 	}
 
-	&::after {
-		top: 39%;
-		right: 22%;
-		transform: translate(50%, -50%);
-		display: block;
-		background: #12d4f0;
-		width: 170px;
-		height: 150px;
-		border-radius: 50%;
-		filter: blur(240px);
-		opacity: 0.5;
-
-		@-moz-document url-prefix() {
-			opacity: 0.02;
-			width: 658px;
-			height: 520px;
-			filter: blur(540px);
-		}
-
-		@media (max-width: rem($mobile)) {
-			top: 49%;
-			right: auto;
-			left: 30%;
-			transform: translate(-50%, -50%);
-			width: 130px;
-			height: 100px;
-			filter: blur(110px);
+	@media (min-width: rem($mobile)) {
+		&::after {
+			top: 39%;
+			right: 22%;
+			transform: translate(50%, -50%);
+			display: block;
+			background: #12d4f0;
+			width: 170px;
+			height: 150px;
+			border-radius: 50%;
+			filter: blur(rem(240));
 			opacity: 0.5;
-		}
-		@media (max-width: rem($mobile-small)) {
-			left: 54%;
+
+			@-moz-document url-prefix() {
+				opacity: 0.02;
+				width: 658px;
+				height: 520px;
+				filter: blur(540px);
+			}
 		}
 	}
 
@@ -235,7 +227,7 @@
 	}
 
 	&__text {
-		color: #E7E7E7;
+		color: #e7e7e7;
 		line-height: 1.42;
 
 		margin-bottom: rem(50);
